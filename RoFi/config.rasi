@@ -1,0 +1,121 @@
+// MAIN CONFIG
+configuration {
+	modi:				"run,drun,filebrowser,window";
+	font:				"JetBrainsMono 12";
+	disable-history:		true;
+    	display-drun:               	"";
+    	display-run:                	"";
+    	display-filebrowser:        	"";
+    	display-window:             	"";
+}
+
+// GLOBAL COLORS
+* {
+	black:				                    #000000;
+	black-alt:			                  #101010;
+	grey:				                      #808080;
+	white:				                    #FFFFFF;
+	accent-color:			                #00C298;
+}
+
+// MAIN WINDOW
+window {
+    	location:                    	west;
+    	anchor:                      	west;
+    	width:                       	500px;
+    	height:			      	          1450; 
+	    x-offset:		      	          -6px;
+	    border:				                0px;
+    	background-color:            	@black;
+}
+
+mainbox {
+	children:			[ inputbar,listview, mode-switcher ];
+}
+
+inputbar {
+    	enabled:			                true;
+    	spacing:                     	10px;
+    	padding:                     	250px 200px 20px 10px;
+    	background-image:            	url("background_img.jpg", width);
+    	orientation:                 	horizontal;
+    	children:                    	[ "entry", "prompt" ];
+}
+
+entry {
+	expand:				                    false;
+	width:				                    0px 0px 10px 362px;
+	padding:			                    12px 0px 12px 10px;
+	border:				                    0px;
+	border-color:			                @black;
+	border-radius:			              5px;
+	cursor:				                    text;
+	placeholder:			                " Search";
+	placeholder-color:		            @grey;
+	background-color:		              #000000d0;
+	text-color:			                  @white;
+}
+
+prompt {
+	expand:				                    true;
+	padding: 			                    12px 40px 10px 40px;
+	border:				                    0px;
+	border-radius:			              8px;
+	border-color:			                @accent-color;
+	background-color:		              #000000d0;	
+	text-color:			                  @white;
+}
+
+listview {
+  scrollbar:                   	    false;
+  spacing:                     	    10px;
+  padding:                     	    35px 0px 0px 0px;
+	border:				                    0px;
+}
+
+element {
+   spacing:                     	  8px;
+   padding:                     	  15px;
+   border-radius:               	  5px;
+}
+
+element normal.normal {
+	background-color:		              @black;
+  text-color:                  	    @white;	
+}
+element normal.active {
+   background-color:            	  @black;	
+   text-color:                  	  @white;	
+}
+element selected.normal {
+	background-color:		              @accent-color;	
+  text-color:                  	    @black;
+}
+element selected.active {
+  background-color:            	    @accent-color;
+	text-color:			                  @black;
+}
+element alternate.normal {
+	background-color:		              @black;
+	text-color:			                  @white;
+}
+
+mode-switcher{
+  padding:                     	    5px 60px 5px 60px;
+	spacing:			                    30px;
+}
+
+button {
+  padding:                     	    8px;
+	border-radius:			              100%;
+	border:				                    2px;
+	border-color:			                @black-alt;	
+	padding:			                    20px 0px;
+  background-color:            	    @black-alt; 
+	text-color:                  	    @white; 
+}
+
+button selected {
+    	background-color:            	@accent-color;
+    	text-color:                  	@black;
+}
